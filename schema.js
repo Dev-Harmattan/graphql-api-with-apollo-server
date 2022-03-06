@@ -24,5 +24,6 @@ module.exports = gql`
     format: String
     track: String
     level: String
+    speakers: [Speaker]
   }
 `;
