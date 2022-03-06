@@ -24,6 +24,7 @@ const server = new ApolloServer({
     if(error.extensions.code === "INTERNAL_SERVER_ERROR"){
       return new ApolloError("We are having some trouble", "ERROR", {token: "uniquetoken"})
     }
+    return error;
   }
 });
 server.listen({port: process.env.PORT || 4000}).then(({url}) => console.log(`server is running on ${url}`))
