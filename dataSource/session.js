@@ -17,5 +17,11 @@ class SessionApi extends DataSource {
     const session =  _.find(sessionData, {id: parseInt(id)});
     return session;
   }
+
+  togleFavouriteSession(id){
+    const session =  _.find(sessionData, {id: parseInt(id)});
+    session.favourite = !session.favourite;
+    return session;
+  }
 }
 module.exports = SessionApi;
